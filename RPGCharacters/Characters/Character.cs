@@ -6,8 +6,8 @@ namespace RPGCharacters
     {
         public string Name { get; set; }
         public int Level { get; set; } = 1;
-        protected Attribute[] BaseAttributes { get; set; }
-        protected Attribute[] TotalAttributes { get; set; }
+        protected AttributeSet BaseAttributes { get; set; }
+        protected AttributeSet TotalAttributes { get; set; }
         protected string PrimaryAttribute { get; set; }
 
         public Character(string name)

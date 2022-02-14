@@ -2,11 +2,23 @@
 {
     public class Attribute
     {
-        private string Type { get; set; }
-        private int Value { get; set; }
-        private bool Primary { get; set; }
+        public enum attributeType
+        {
+            strength,
+            dexterity,
+            intelligence
+        }
 
-        public Attribute(string type, int value, bool primary)
+        public attributeType Type { get; set; }
+        public int Value { get; set; } = 0;
+        public bool Primary { get; set; } = false;
+
+        public Attribute(attributeType type)
+        {
+            Type = type;
+        }
+
+        public Attribute(attributeType type, int value, bool primary)
         {
             Type = type;
             Value = value;
