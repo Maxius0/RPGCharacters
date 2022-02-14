@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RPGCharacters
+﻿namespace RPGCharacters
 {
     public class Attribute
     {
@@ -31,14 +25,14 @@ namespace RPGCharacters
             if (this.Type == addend.Type)
             {
                 this.Value += addend.Value;
-            }            
+            }
         }
 
-        public static Attribute operator + (Attribute addend1, Attribute addend2)
+        public static Attribute operator +(Attribute addend1, Attribute addend2)
         {
             Attribute result = new Attribute(addend1);
             result.Add(addend2);
             return result;
-        } 
+        }
     }
 }
