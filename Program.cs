@@ -14,6 +14,11 @@ namespace RPGCharacters
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Generic RPG!");
+            Mage testMage = new Mage("Mageius");
+            Character.CharacterSheet(testMage);
+            Console.WriteLine("Levelling up character...");
+            testMage.LevelUp();
+            Character.CharacterSheet(testMage);
         }
     }
 }
