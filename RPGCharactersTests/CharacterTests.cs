@@ -42,9 +42,7 @@ namespace RPGCharactersTests
         {
             // Arrange
             Mage mage;
-            AttributeSet expected = new AttributeSet(new Attribute(AttributeType.strength, 1),
-                                                     new Attribute(AttributeType.dexterity, 1),
-                                                     new Attribute(AttributeType.intelligence, 8));
+            AttributeSet expected = new AttributeSet(1, 1, 8);
 
             // Act
             mage = new Mage("Mage");
@@ -59,9 +57,7 @@ namespace RPGCharactersTests
         {
             // Arrange
             Mage mage = new Mage("Mage");
-            AttributeSet expected = new AttributeSet(new Attribute(AttributeType.strength, 1+1),
-                                                     new Attribute(AttributeType.dexterity, 1+1),
-                                                     new Attribute(AttributeType.intelligence, 8+5));
+            AttributeSet expected = new AttributeSet(1 + 1, 1 + 1, 8 + 5);
 
             // Act
             mage.LevelUp();
@@ -76,9 +72,7 @@ namespace RPGCharactersTests
         {
             // Arrange
             Ranger ranger;
-            AttributeSet expected = new AttributeSet(new Attribute(AttributeType.strength, 1),
-                                                     new Attribute(AttributeType.dexterity, 7),
-                                                     new Attribute(AttributeType.intelligence, 1));
+            AttributeSet expected = new AttributeSet(1, 7, 1);
 
             // Act
             ranger = new Ranger("Ranger");
@@ -93,9 +87,7 @@ namespace RPGCharactersTests
         {
             // Arrange
             Ranger ranger = new Ranger("Ranger");
-            AttributeSet expected = new AttributeSet(new Attribute(AttributeType.strength, 1 + 1),
-                                                     new Attribute(AttributeType.dexterity, 7 + 5),
-                                                     new Attribute(AttributeType.intelligence, 1 + 1));
+            AttributeSet expected = new AttributeSet(1 + 1, 7 + 5, 1 + 1);
 
             // Act
             ranger.LevelUp();
@@ -110,9 +102,7 @@ namespace RPGCharactersTests
         {
             // Arrange
             Rogue rogue;
-            AttributeSet expected = new AttributeSet(new Attribute(AttributeType.strength, 2),
-                                                     new Attribute(AttributeType.dexterity, 6),
-                                                     new Attribute(AttributeType.intelligence, 1));
+            AttributeSet expected = new AttributeSet(2, 6, 1);
 
             // Act
             rogue = new Rogue("Rogue");
@@ -127,9 +117,7 @@ namespace RPGCharactersTests
         {
             // Arrange
             Rogue rogue = new Rogue("Rogue");
-            AttributeSet expected = new AttributeSet(new Attribute(AttributeType.strength, 2 + 1),
-                                                     new Attribute(AttributeType.dexterity, 6 + 4),
-                                                     new Attribute(AttributeType.intelligence, 1 + 1));
+            AttributeSet expected = new AttributeSet(2 + 1, 6 + 4, 1 + 1);
 
             // Act
             rogue.LevelUp();
@@ -144,9 +132,7 @@ namespace RPGCharactersTests
         {
             // Arrange
             Warrior warrior;
-            AttributeSet expected = new AttributeSet(new Attribute(AttributeType.strength, 5),
-                                                     new Attribute(AttributeType.dexterity, 2),
-                                                     new Attribute(AttributeType.intelligence, 1));
+            AttributeSet expected = new AttributeSet(5, 2, 1);
 
             // Act
             warrior = new Warrior("Warrior");
@@ -161,9 +147,7 @@ namespace RPGCharactersTests
         {
             // Arrange
             Warrior warrior = new Warrior("Warrior");
-            AttributeSet expected = new AttributeSet(new Attribute(AttributeType.strength, 5 + 3),
-                                                     new Attribute(AttributeType.dexterity, 2 + 2),
-                                                     new Attribute(AttributeType.intelligence, 1 + 1));
+            AttributeSet expected = new AttributeSet(5 + 3, 2 + 2, 1 + 1);
 
             // Act
             warrior.LevelUp();
