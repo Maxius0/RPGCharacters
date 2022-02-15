@@ -23,6 +23,11 @@ namespace RPGCharacters
             PrimaryAttribute = primary;
         }
 
+        public Attribute GetAttribute(Attribute.attributeType type)
+        {
+            return Attributes.Find(attr => attr.Type == type);
+        }
+
         public void Add(AttributeSet addend)
         {
             for (int i = 0; i < Attributes.Count; i++)
