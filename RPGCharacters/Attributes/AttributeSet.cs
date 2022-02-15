@@ -7,16 +7,21 @@ namespace RPGCharacters
     {
         public List<Attribute> Attributes { get; set; } = new List<Attribute>();
 
-        public AttributeSet(Attribute strength, Attribute dexterity, Attribute intelligence)
+        public AttributeSet(int strength, int dexterity, int intelligence)
         {
-            Attributes.Add(strength);
-            Attributes.Add(dexterity);
-            Attributes.Add(intelligence);
+            Attributes.Add(new Attribute(AttributeType.strength, strength));
+            Attributes.Add(new Attribute(AttributeType.dexterity, dexterity));
+            Attributes.Add(new Attribute(AttributeType.intelligence, intelligence));
         }
 
-        public Attribute GetAttribute(AttributeType type)
+        public AttributeSet(AttributeSet copy)
         {
-            return Attributes.Find(attr => attr.Type == type);
+            Attributes = new List<Attribute>(copy.Attributes);
+        }
+
+        public int GetAttributeValue(AttributeType type)
+        {
+            return Attributes.Find(attr => attr.Type == type).Value;
         }
 
         public void Add(AttributeSet addend)
