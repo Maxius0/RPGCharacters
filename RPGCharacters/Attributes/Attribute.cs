@@ -2,9 +2,9 @@
 {
     public enum AttributeType
     {
-        strength,
-        dexterity,
-        intelligence
+        Strength,
+        Dexterity,
+        Intelligence
     }
 
     public class Attribute

@@ -9,9 +9,9 @@ namespace RPGCharacters
 
         public AttributeSet(int strength, int dexterity, int intelligence)
         {
-            Attributes.Add(new Attribute(AttributeType.strength, strength));
-            Attributes.Add(new Attribute(AttributeType.dexterity, dexterity));
-            Attributes.Add(new Attribute(AttributeType.intelligence, intelligence));
+            Attributes.Add(new Attribute(AttributeType.Strength, strength));
+            Attributes.Add(new Attribute(AttributeType.Dexterity, dexterity));
+            Attributes.Add(new Attribute(AttributeType.Intelligence, intelligence));
         }
 
         public AttributeSet(AttributeSet copy)

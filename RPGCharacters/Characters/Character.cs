@@ -36,11 +36,11 @@ namespace RPGCharacters
             characterString.Append("\nLevel: ");
             characterString.Append(Level);
             characterString.Append("\nStrength: ");
-            characterString.Append(TotalAttributes.GetAttributeValue(AttributeType.strength));
+            characterString.Append(TotalAttributes.GetAttributeValue(AttributeType.Strength));
             characterString.Append("\nDexterity: ");
-            characterString.Append(TotalAttributes.GetAttributeValue(AttributeType.dexterity));
+            characterString.Append(TotalAttributes.GetAttributeValue(AttributeType.Dexterity));
             characterString.Append("\nIntelligence: ");
-            characterString.Append(TotalAttributes.GetAttributeValue(AttributeType.intelligence));
+            characterString.Append(TotalAttributes.GetAttributeValue(AttributeType.Intelligence));
             characterString.Append("\nDamage: ");
             characterString.Append(Damage());
 

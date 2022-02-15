@@ -13,7 +13,7 @@
         {
             Name = name;
             CharacterClass = "Mage";
-            PrimaryAttribute = AttributeType.intelligence;
+            PrimaryAttribute = AttributeType.Intelligence;
             BaseAttributes = new AttributeSet(baseStr, baseDex, baseInt);
             TotalAttributes = new AttributeSet(BaseAttributes);
             LevelUpAttributes = new AttributeSet(lvlUpStr, lvlUpDex, lvlUpInt);

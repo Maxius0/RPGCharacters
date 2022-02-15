@@ -5,7 +5,7 @@
         private const int baseStr = 2;
         private const int baseDex = 6;
         private const int baseInt = 1;
-        private const AttributeType primary = AttributeType.dexterity;
+        private const AttributeType primary = AttributeType.Dexterity;
         private const int lvlUpStr = 1;
         private const int lvlUpDex = 4;
         private const int lvlUpInt = 1;
