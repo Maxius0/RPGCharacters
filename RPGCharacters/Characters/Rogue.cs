@@ -1,19 +1,19 @@
 ﻿namespace RPGCharacters
 {
-    public class Mage : Character
+    public class Rogue : Character
     {
-        private const int baseStr = 1;
-        private const int baseDex = 1;
-        private const int baseInt = 8;
-        private const Attribute.attributeType primary = Attribute.attributeType.intelligence;
+        private const int baseStr = 2;
+        private const int baseDex = 6;
+        private const int baseInt = 1;
+        private const Attribute.attributeType primary = Attribute.attributeType.dexterity;
         private const int lvlUpStr = 1;
-        private const int lvlUpDex = 1;
-        private const int lvlUpInt = 5;
-            
+        private const int lvlUpDex = 4;
+        private const int lvlUpInt = 1;
 
-        public Mage(string name) : base(name)
+
+        public Rogue(string name) : base(name)
         {
-            characterClass = "Mage";
+            characterClass = "Rogue";
             BaseAttributes = new AttributeSet(new Attribute(Attribute.attributeType.strength, baseStr),
                                               new Attribute(Attribute.attributeType.dexterity, baseDex),
                                               new Attribute(Attribute.attributeType.intelligence, baseInt), primary);
