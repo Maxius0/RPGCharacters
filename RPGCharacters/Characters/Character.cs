@@ -18,6 +18,12 @@ namespace RPGCharacters
         {
             Level++;
             BaseAttributes.Add(LevelUpAttributes);
+            UpdateTotalAttributes();
+        }
+
+        private void UpdateTotalAttributes()
+        {
+            TotalAttributes = new AttributeSet(BaseAttributes);
         }
 
         public double Damage()
