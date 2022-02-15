@@ -15,10 +15,10 @@ namespace RPGCharacters
         {
             Console.WriteLine("Welcome to Generic RPG!\n");
             Mage testMage = new Mage("Mageius");
-            Character.DisplayStats(testMage);
+            CharacterPrinter.DisplayStats(testMage.ToString());
             Console.WriteLine("Levelling up character...\n");
             testMage.LevelUp();
-            Character.DisplayStats(testMage);
+            CharacterPrinter.DisplayStats(testMage.ToString());
         }
     }
 }
