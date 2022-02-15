@@ -10,11 +10,11 @@ namespace RPGCharactersTests
         public void Constructor_InitializeWithName_ShouldCreateCharacterAtLevelOne()
         {
             // Arrange
-            string name = "Character";
-            Mage character = new Mage(name);
+            Mage character;
             int expected = 1;
 
             // Act
+            character = new Mage("Character");
             int actual = character.Level;
 
             // Assert
@@ -37,24 +37,38 @@ namespace RPGCharactersTests
             Assert.Equal(expected, actual);
         }
 
-        public static IEnumerable<object[]> Characters
-        {
-            get
-            {
-                yield return new object[] { new Mage("Mage") };
-            }
-        }
-
-        [Theory]
-        [MemberData(nameof(Characters))]
-        public void Constructor_InitializeWithName_ShouldCreateCharacterWithProperDefaultAttributes(Character character)
+        [Fact]
+        public void Constructor_InitializeMage_ShouldCreateMageWithProperDefaultAttributes()
         {
             // Arrange
-            
+            Mage mage;
+            AttributeSet expected = new AttributeSet(new Attribute(Attribute.attributeType.strength, 1),
+                                                     new Attribute(Attribute.attributeType.dexterity, 1),
+                                                     new Attribute(Attribute.attributeType.intelligence, 8));
+
             // Act
+            mage = new Mage("Mage");
+            AttributeSet actual = mage.BaseAttributes;
 
             // Assert
-            Assert.True(true);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void LevelUp_CallOnMage_ShouldIncreaseAttributesAppropriately()
+        {
+            // Arrange
+            Mage mage = new Mage("Mage");
+            AttributeSet expected = new AttributeSet(new Attribute(Attribute.attributeType.strength, 1+1),
+                                                     new Attribute(Attribute.attributeType.dexterity, 1+1),
+                                                     new Attribute(Attribute.attributeType.intelligence, 8+5));
+
+            // Act
+            mage.LevelUp();
+            AttributeSet actual = mage.BaseAttributes;
+
+            // Assert
+            Assert.Equal(expected, actual);
 
         }
     }
