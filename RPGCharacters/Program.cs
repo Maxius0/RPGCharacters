@@ -13,12 +13,12 @@ namespace RPGCharacters
         /// <param name="args">Command line arguments.</param>
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Generic RPG!");
+            Console.WriteLine("Welcome to Generic RPG!\n");
             Mage testMage = new Mage("Mageius");
-            Character.CharacterSheet(testMage);
-            Console.WriteLine("Levelling up character...");
+            Character.DisplayStats(testMage);
+            Console.WriteLine("Levelling up character...\n");
             testMage.LevelUp();
-            Character.CharacterSheet(testMage);
+            Character.DisplayStats(testMage);
         }
     }
 }
