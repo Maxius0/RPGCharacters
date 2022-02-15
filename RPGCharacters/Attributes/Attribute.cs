@@ -1,4 +1,6 @@
-﻿namespace RPGCharacters
+﻿using System;
+
+namespace RPGCharacters
 {
     public enum AttributeType
     {
@@ -7,17 +9,14 @@
         Intelligence
     }
 
+    /// <summary>
+    /// An attribute consists of an AttributeType (Strength/Dexterity/Intelligence) and an integer value.
+    /// An attribute can be copied, added and compared to other attributes.
+    /// </summary>
     public class Attribute
     {
-
-
         public AttributeType Type { get; set; }
         public int Value { get; set; } = 0;
-
-        public Attribute(AttributeType type)
-        {
-            Type = type;
-        }
 
         public Attribute(AttributeType type, int value)
         {
@@ -31,11 +30,20 @@
             Value = copy.Value;
         }
 
+        /// <summary>
+        /// Adds two attributes together by adding their values.
+        /// </summary>
+        /// <param name="addend">The attribute to add.</param>
+        /// <exception>ArgumentException if the addends are not of the same attribute type.</exception>
         public void Add(Attribute addend)
         {
             if (this.Type == addend.Type)
             {
                 this.Value += addend.Value;
+            }
+            else
+            {
+                throw new ArgumentException();
             }
         }
 
