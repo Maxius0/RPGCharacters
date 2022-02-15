@@ -9,13 +9,20 @@ namespace RPGCharacters
         public AttributeSet BaseAttributes { get; protected set; }
         public AttributeSet TotalAttributes { get; protected set; }
         protected AttributeSet LevelUpAttributes { get; set; }
+        protected AttributeType PrimaryAttribute { get; set; }
         protected string Name { get; set; }
         protected string CharacterClass { get; set; }
+        protected double WeaponDPS { get; set; } = 1.0;
 
         public void LevelUp()
         {
             Level++;
             BaseAttributes.Add(LevelUpAttributes);
+        }
+
+        public double Damage()
+        {
+            return WeaponDPS * (1 + ((double) TotalAttributes.GetAttributeValue(PrimaryAttribute)) / 100.0);
         }
 
         public override string ToString()
@@ -29,11 +36,13 @@ namespace RPGCharacters
             characterString.Append("\nLevel: ");
             characterString.Append(Level);
             characterString.Append("\nStrength: ");
-            characterString.Append(BaseAttributes.GetAttributeValue(AttributeType.strength));
+            characterString.Append(TotalAttributes.GetAttributeValue(AttributeType.strength));
             characterString.Append("\nDexterity: ");
-            characterString.Append(BaseAttributes.GetAttributeValue(AttributeType.dexterity));
+            characterString.Append(TotalAttributes.GetAttributeValue(AttributeType.dexterity));
             characterString.Append("\nIntelligence: ");
-            characterString.Append(BaseAttributes.GetAttributeValue(AttributeType.intelligence));
+            characterString.Append(TotalAttributes.GetAttributeValue(AttributeType.intelligence));
+            characterString.Append("\nDamage: ");
+            characterString.Append(Damage());
 
             return characterString.ToString();
         }
