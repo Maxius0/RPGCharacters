@@ -40,10 +40,14 @@ namespace RPGCharacters
         /// <param name="addend">The attribute set to add.</param>
         public void Add(AttributeSet addend)
         {
-            for (int i = 0; i < Attributes.Count; i++)
-            {
-                Attributes[i].Add(addend.Attributes[i]);
-            }
+            Attributes = new List<Attribute> (Attributes.Zip(addend.Attributes, ((attr1, attr2) => attr1 + attr2)));
+        }
+
+        public static AttributeSet operator +(AttributeSet addend1, AttributeSet addend2)
+        {
+            AttributeSet result = new AttributeSet(addend1);
+            result.Add(addend2);
+            return result;
         }
 
         public override bool Equals(object obj)
