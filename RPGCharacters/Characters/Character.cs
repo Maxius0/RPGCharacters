@@ -5,12 +5,12 @@ namespace RPGCharacters
 {
     public abstract class Character
     {
-        public string Name { get; set; }
-        public int Level { get; set; } = 1;
-        public AttributeSet BaseAttributes { get; set; }
-        public AttributeSet TotalAttributes { get; set; }
+        public string Name { get; protected set; }
+        public int Level { get; private set; } = 1;
+        public AttributeSet BaseAttributes { get; protected set; }
+        public AttributeSet TotalAttributes { get; protected set; }
         protected AttributeSet LevelUpAttributes { get; set; }
-        protected string characterClass;
+        protected string CharacterClass { get; set; }
 
         public Character(string name)
         {
@@ -26,26 +26,21 @@ namespace RPGCharacters
         public override string ToString()
         {
             StringBuilder characterString = new StringBuilder();
+
             characterString.Append("Name: ");
             characterString.Append(Name);
             characterString.Append("\nClass: ");
-            characterString.Append(characterClass);
+            characterString.Append(CharacterClass);
             characterString.Append("\nLevel: ");
             characterString.Append(Level);
             characterString.Append("\nStrength: ");
-            characterString.Append(BaseAttributes.GetAttribute(Attribute.attributeType.strength).Value);
+            characterString.Append(BaseAttributes.GetAttribute(AttributeType.strength).Value);
             characterString.Append("\nDexterity: ");
-            characterString.Append(BaseAttributes.GetAttribute(Attribute.attributeType.dexterity).Value);
+            characterString.Append(BaseAttributes.GetAttribute(AttributeType.dexterity).Value);
             characterString.Append("\nIntelligence: ");
-            characterString.Append(BaseAttributes.GetAttribute(Attribute.attributeType.intelligence).Value);
-            return characterString.ToString();
-        }
+            characterString.Append(BaseAttributes.GetAttribute(AttributeType.intelligence).Value);
 
-        public static void DisplayStats(Character character)
-        {
-            Console.WriteLine("<<< Character Sheet >>>");
-            Console.WriteLine(character.ToString());
-            Console.WriteLine();
+            return characterString.ToString();
         }
     }
 }

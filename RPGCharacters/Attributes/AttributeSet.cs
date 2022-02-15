@@ -6,7 +6,6 @@ namespace RPGCharacters
     public class AttributeSet
     {
         public List<Attribute> Attributes { get; set; } = new List<Attribute>();
-        public Attribute.attributeType PrimaryAttribute { get; set; }
 
         public AttributeSet(Attribute strength, Attribute dexterity, Attribute intelligence)
         {
@@ -15,15 +14,7 @@ namespace RPGCharacters
             Attributes.Add(intelligence);
         }
 
-        public AttributeSet (Attribute strength, Attribute dexterity, Attribute intelligence, Attribute.attributeType primary)
-        {
-            Attributes.Add(strength);
-            Attributes.Add(dexterity);
-            Attributes.Add(intelligence);
-            PrimaryAttribute = primary;
-        }
-
-        public Attribute GetAttribute(Attribute.attributeType type)
+        public Attribute GetAttribute(AttributeType type)
         {
             return Attributes.Find(attr => attr.Type == type);
         }

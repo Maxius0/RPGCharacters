@@ -1,23 +1,25 @@
 ﻿namespace RPGCharacters
 {
+    public enum AttributeType
+    {
+        strength,
+        dexterity,
+        intelligence
+    }
+
     public class Attribute
     {
-        public enum attributeType
-        {
-            strength,
-            dexterity,
-            intelligence
-        }
 
-        public attributeType Type { get; set; }
+
+        public AttributeType Type { get; set; }
         public int Value { get; set; } = 0;
 
-        public Attribute(attributeType type)
+        public Attribute(AttributeType type)
         {
             Type = type;
         }
 
-        public Attribute(attributeType type, int value)
+        public Attribute(AttributeType type, int value)
         {
             Type = type;
             Value = value;
