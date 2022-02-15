@@ -11,25 +11,22 @@
 
         public attributeType Type { get; set; }
         public int Value { get; set; } = 0;
-        public bool Primary { get; set; } = false;
 
         public Attribute(attributeType type)
         {
             Type = type;
         }
 
-        public Attribute(attributeType type, int value, bool primary)
+        public Attribute(attributeType type, int value)
         {
             Type = type;
             Value = value;
-            Primary = primary;
         }
 
         public Attribute(Attribute copy)
         {
             Type = copy.Type;
             Value = copy.Value;
-            Primary = copy.Primary;
         }
 
         public void Add(Attribute addend)
@@ -46,5 +43,28 @@
             result.Add(addend2);
             return result;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Attribute))
+            {
+                return false;
+            }
+            return Type == ((Attribute)obj).Type && Value == ((Attribute)obj).Value; 
+        }
+
+        public static bool operator ==(Attribute compare1, Attribute compare2)
+        {
+            return compare1.Equals(compare2);
+        }
+        public static bool operator !=(Attribute compare1, Attribute compare2)
+        {
+            return !compare1.Equals(compare2);
+        }
+
     }
 }

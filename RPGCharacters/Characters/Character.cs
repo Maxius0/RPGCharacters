@@ -6,9 +6,9 @@ namespace RPGCharacters
     {
         public string Name { get; set; }
         public int Level { get; set; } = 1;
-        protected AttributeSet BaseAttributes { get; set; }
-        protected AttributeSet TotalAttributes { get; set; }
-        protected string PrimaryAttribute { get; set; }
+        public AttributeSet BaseAttributes { get; set; }
+        public AttributeSet TotalAttributes { get; set; }
+        protected AttributeSet LevelUpAttributes { get; set; } 
 
         public Character(string name)
         {
@@ -17,7 +17,8 @@ namespace RPGCharacters
 
         public void LevelUp()
         {
-            this.Level++;
+            Level++;
+            BaseAttributes.Add(LevelUpAttributes);
         }
 
         public override string ToString()

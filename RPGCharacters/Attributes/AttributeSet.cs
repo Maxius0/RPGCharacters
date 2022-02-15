@@ -1,28 +1,48 @@
-﻿namespace RPGCharacters
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace RPGCharacters
 {
     public class AttributeSet
     {
-        public Attribute Strength { get; set; } = new Attribute(Attribute.attributeType.strength);
-        public Attribute Dexterity { get; set;} = new Attribute(Attribute.attributeType.dexterity);
-        public Attribute Intelligence { get; set;} = new Attribute(Attribute.attributeType.intelligence);
+        public List<Attribute> Attributes { get; set; } = new List<Attribute>();
+        public Attribute.attributeType PrimaryAttribute { get; set; }
 
-        public AttributeSet (int strength, int dexterity, int intelligence, Attribute.attributeType primary)
+        public AttributeSet(Attribute strength, Attribute dexterity, Attribute intelligence)
         {
-            Strength.Value = strength;
-            Dexterity.Value = dexterity;
-            Intelligence.Value = intelligence;
-            switch (primary)
+            Attributes.Add(strength);
+            Attributes.Add(dexterity);
+            Attributes.Add(intelligence);
+        }
+
+        public AttributeSet (Attribute strength, Attribute dexterity, Attribute intelligence, Attribute.attributeType primary)
+        {
+            Attributes.Add(strength);
+            Attributes.Add(dexterity);
+            Attributes.Add(intelligence);
+            PrimaryAttribute = primary;
+        }
+
+        public void Add(AttributeSet addend)
+        {
+            for (int i = 0; i < Attributes.Count; i++)
             {
-                case Attribute.attributeType.strength:
-                    Strength.Primary = true;
-                    break;
-                case Attribute.attributeType.dexterity:
-                    Dexterity.Primary = true;
-                    break;
-                case Attribute.attributeType.intelligence:
-                    Intelligence.Primary = true;
-                    break;
+                Attributes[i].Add(addend.Attributes[i]);
             }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is AttributeSet))
+            {
+                return false;
+            }
+
+            return Attributes.SequenceEqual(((AttributeSet)obj).Attributes);
         }
     }
 }
