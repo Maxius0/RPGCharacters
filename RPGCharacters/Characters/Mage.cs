@@ -8,17 +8,14 @@
         private const int lvlUpStr = 1;
         private const int lvlUpDex = 1;
         private const int lvlUpInt = 5;
-            
 
-        public Mage(string name) : base(name)
+        public Mage(string name)
         {
+            Name = name;
             CharacterClass = "Mage";
-            BaseAttributes = new AttributeSet(new Attribute(AttributeType.strength, baseStr),
-                                              new Attribute(AttributeType.dexterity, baseDex),
-                                              new Attribute(AttributeType.intelligence, baseInt));
-            LevelUpAttributes = new AttributeSet(new Attribute(AttributeType.strength, lvlUpStr),
-                                                 new Attribute(AttributeType.dexterity, lvlUpDex),
-                                                 new Attribute(AttributeType.intelligence, lvlUpInt));
+            BaseAttributes = new AttributeSet(baseStr, baseDex, baseInt);
+            TotalAttributes = new AttributeSet(BaseAttributes);
+            LevelUpAttributes = new AttributeSet(lvlUpStr, lvlUpDex, lvlUpInt);
         }
     }
 }

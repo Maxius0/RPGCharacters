@@ -11,15 +11,13 @@
         private const int lvlUpInt = 1;
 
 
-        public Ranger(string name) : base(name)
+        public Ranger(string name)
         {
+            Name = name;
             CharacterClass = "Ranger";
-            BaseAttributes = new AttributeSet(new Attribute(AttributeType.strength, baseStr),
-                                              new Attribute(AttributeType.dexterity, baseDex),
-                                              new Attribute(AttributeType.intelligence, baseInt));
-            LevelUpAttributes = new AttributeSet(new Attribute(AttributeType.strength, lvlUpStr),
-                                                 new Attribute(AttributeType.dexterity, lvlUpDex),
-                                                 new Attribute(AttributeType.intelligence, lvlUpInt));
+            BaseAttributes = new AttributeSet(baseStr, baseDex, baseInt);
+            TotalAttributes = new AttributeSet(BaseAttributes);
+            LevelUpAttributes = new AttributeSet(lvlUpStr, lvlUpDex, lvlUpInt);
         }
     }
 }

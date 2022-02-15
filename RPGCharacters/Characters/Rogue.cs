@@ -11,15 +11,13 @@
         private const int lvlUpInt = 1;
 
 
-        public Rogue(string name) : base(name)
+        public Rogue(string name)
         {
+            Name = name;
             CharacterClass = "Rogue";
-            BaseAttributes = new AttributeSet(new Attribute(AttributeType.strength, baseStr),
-                                              new Attribute(AttributeType.dexterity, baseDex),
-                                              new Attribute(AttributeType.intelligence, baseInt));
-            LevelUpAttributes = new AttributeSet(new Attribute(AttributeType.strength, lvlUpStr),
-                                                 new Attribute(AttributeType.dexterity, lvlUpDex),
-                                                 new Attribute(AttributeType.intelligence, lvlUpInt));
+            BaseAttributes = new AttributeSet(baseStr, baseDex, baseInt);
+            TotalAttributes = new AttributeSet(BaseAttributes);
+            LevelUpAttributes = new AttributeSet(lvlUpStr, lvlUpDex, lvlUpInt);
         }
     }
 }

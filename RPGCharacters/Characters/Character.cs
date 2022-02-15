@@ -5,17 +5,12 @@ namespace RPGCharacters
 {
     public abstract class Character
     {
-        public string Name { get; protected set; }
         public int Level { get; private set; } = 1;
         public AttributeSet BaseAttributes { get; protected set; }
         public AttributeSet TotalAttributes { get; protected set; }
         protected AttributeSet LevelUpAttributes { get; set; }
+        protected string Name { get; set; }
         protected string CharacterClass { get; set; }
-
-        public Character(string name)
-        {
-            Name = name;
-        }
 
         public void LevelUp()
         {
