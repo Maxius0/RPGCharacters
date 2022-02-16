@@ -20,6 +20,7 @@
             BaseAttributes = new AttributeSet(baseStr, baseDex, baseInt);
             TotalAttributes = new AttributeSet(BaseAttributes);
             LevelUpAttributes = new AttributeSet(lvlUpStr, lvlUpDex, lvlUpInt);
+            EligibleWeaponTypes = new WeaponType[]{WeaponType.Staff, WeaponType.Wand };
         }
     }
 }

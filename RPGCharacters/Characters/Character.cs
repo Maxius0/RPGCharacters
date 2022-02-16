@@ -13,9 +13,10 @@ namespace RPGCharacters
         public AttributeSet TotalAttributes { get; protected set; }
         protected AttributeSet LevelUpAttributes { get; set; }
         protected AttributeType PrimaryAttribute { get; set; }
+        protected WeaponType[] EligibleWeaponTypes { get; set; }
         protected string Name { get; set; }
         protected string CharacterClass { get; set; }
-        protected double WeaponDPS { get; set; } = 1.0;
+        
 
         /// <summary>
         /// Levels up the character, increasing their level and attributes accordingly.
@@ -41,7 +42,7 @@ namespace RPGCharacters
         /// <returns>The damage of the character represented as a double value.</returns>
         public double Damage()
         {
-            return WeaponDPS * (1 + ((double) TotalAttributes.GetAttributeValue(PrimaryAttribute)) / 100.0);
+            return 1 * (1 + ((double) TotalAttributes.GetAttributeValue(PrimaryAttribute)) / 100.0);
         }
 
         public override string ToString()
