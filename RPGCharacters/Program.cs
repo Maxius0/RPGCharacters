@@ -26,7 +26,7 @@ namespace RPGCharacters
             Console.WriteLine(testAxe.ToString());
 
             Console.WriteLine("\nEquipping weapon...\n");
-            testWarrior.EquipItem(testAxe);
+            Console.WriteLine(testWarrior.EquipItem(testAxe) + "\n");
             CharacterPrinter.DisplayStats(testWarrior.ToString());
 
             Console.WriteLine("\nCreating armor piece...\n");
@@ -34,7 +34,7 @@ namespace RPGCharacters
             Console.WriteLine(testPlateBody.ToString());
 
             Console.WriteLine("\nEquipping armor piece...\n");
-            testWarrior.EquipItem(testPlateBody);
+            Console.WriteLine(testWarrior.EquipItem(testPlateBody) + "\n"); 
             CharacterPrinter.DisplayStats(testWarrior.ToString());
         }
     }
