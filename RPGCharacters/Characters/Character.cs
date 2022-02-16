@@ -12,10 +12,13 @@ namespace RPGCharacters
         public int Level { get; private set; } = 1;
         public AttributeSet BaseAttributes { get; protected set; }
         public AttributeSet TotalAttributes { get; protected set; }
+        public AttributeSet EquipmentAttributes { get; set; } = new AttributeSet(0, 0, 0);
         protected AttributeSet LevelUpAttributes { get; set; }
         protected AttributeType PrimaryAttribute { get; set; }
-        protected WeaponType[] EligibleWeaponTypes { get; set; }
-        protected Dictionary<Slot, Item> Equipment { get; set; } = new Dictionary<Slot, Item>();
+        public WeaponType[] EligibleWeaponTypes { get; set; }
+        public ArmorType[] EligibleArmorTypes { get; set; }
+        public Dictionary<Slot, Item> Equipment { get; set; } = new Dictionary<Slot, Item>();
+        public double WeaponDPS { get; set; } = 1;
         protected string Name { get; set; }
         protected string CharacterClass { get; set; }
         
@@ -35,7 +38,7 @@ namespace RPGCharacters
         /// </summary>
         private void UpdateTotalAttributes()
         {
-            TotalAttributes = new AttributeSet(BaseAttributes);
+            TotalAttributes = new AttributeSet(BaseAttributes + EquipmentAttributes);
         }
 
         /// <summary>
@@ -44,7 +47,14 @@ namespace RPGCharacters
         /// <returns>The damage of the character represented as a double value.</returns>
         public double Damage()
         {
-            return 1 * (1 + ((double) TotalAttributes.GetAttributeValue(PrimaryAttribute)) / 100.0);
+            return WeaponDPS * (1 + ((double) TotalAttributes.GetAttributeValue(PrimaryAttribute)) / 100.0);
+        }
+
+        public string EquipItem(Item item)
+        {
+            string result =  item.OnEquip(this);
+            UpdateTotalAttributes();
+            return result;
         }
 
         public override string ToString()

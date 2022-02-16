@@ -26,6 +26,12 @@ namespace RPGCharacters
             Type = type;
             Attributes = new AttributeSet(attributes);
         }
-        
+
+        public override string OnEquip(Character character)
+        {
+            character.EquipmentAttributes = Attributes;
+            character.Equipment[Slot] = this;
+            return "New armor equipped!";
+        }
     }
 }

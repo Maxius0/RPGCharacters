@@ -19,5 +19,7 @@ namespace RPGCharacters
         public Slot Slot { get; protected set; }
         public string Name { get; protected set; }
         public int RequiredLevel { get; protected set; } = 1;
+
+        public abstract string OnEquip(Character character);
     }
 }

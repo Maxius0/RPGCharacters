@@ -36,5 +36,13 @@ namespace RPGCharacters
         {
             return Damage * AttackSpeed;
         }
+
+        public override string OnEquip(Character character)
+        {
+            character.WeaponDPS = DPS();
+            character.Equipment[Slot] = this;
+            return "New weapon equipped!";
+        }
+
     }
 }
