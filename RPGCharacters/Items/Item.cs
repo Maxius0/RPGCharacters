@@ -14,7 +14,7 @@ namespace RPGCharacters
         Weapon
     }
 
-    public class Item
+    public abstract class Item
     {
         public Slot Slot { get; protected set; }
         public string Name { get; protected set; }
