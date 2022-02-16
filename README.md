@@ -14,3 +14,4 @@ Open solution in Visual Studio and run all tests.
 
 Marius Samson
 https://gitlab.com/Maxius0
+https://github.com/Maxius0
