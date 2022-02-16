@@ -64,7 +64,7 @@ namespace RPGCharacters
             {
                 return false;
             }
-            return Type == ((Attribute)obj).Type && Value == ((Attribute)obj).Value; 
+            return Type == ((Attribute)obj).Type && Value == ((Attribute)obj).Value;
         }
 
         public static bool operator ==(Attribute compare1, Attribute compare2)

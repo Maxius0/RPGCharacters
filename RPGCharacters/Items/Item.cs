@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RPGCharacters
+﻿namespace RPGCharacters
 {
     public enum Slot
     {
@@ -20,6 +14,6 @@ namespace RPGCharacters
         public string Name { get; protected set; }
         public int RequiredLevel { get; protected set; } = 1;
 
-        public abstract string OnEquip(Character character);
+        public abstract string Equipable(int characterLevel, WeaponType[] characterWeapons, ArmorType[] characterArmor);
     }
 }

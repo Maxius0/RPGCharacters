@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RPGCharacters
 {
@@ -18,9 +16,9 @@ namespace RPGCharacters
     }
     public class Weapon : Item
     {
-        public WeaponType Type { get; private set;}
-        private double Damage { get; set;}
-        private double AttackSpeed { get; set;}
+        public WeaponType Type { get; private set; }
+        private double Damage { get; set; }
+        private double AttackSpeed { get; set; }
 
         public Weapon(string name, int requiredLevel, WeaponType type, double damage, double attackSpeed)
         {
@@ -37,10 +35,16 @@ namespace RPGCharacters
             return Damage * AttackSpeed;
         }
 
-        public override string OnEquip(Character character)
+        public override string Equipable(int characterLevel, WeaponType[] characterWeapons, ArmorType[] _)
         {
-            character.WeaponDPS = DPS();
-            character.Equipment[Slot] = this;
+            if (!characterWeapons.Contains(Type))
+            {
+                throw new InvalidWeaponException("Character cannot equip this weapon type.");
+            }
+            if (characterLevel < RequiredLevel)
+            {
+                throw new InvalidWeaponException("Character's level is not high enough.");
+            }
             return "New weapon equipped!";
         }
 

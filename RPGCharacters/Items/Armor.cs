@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RPGCharacters
 {
@@ -27,10 +25,16 @@ namespace RPGCharacters
             Attributes = new AttributeSet(attributes);
         }
 
-        public override string OnEquip(Character character)
+        public override string Equipable(int characterLevel, WeaponType[] _, ArmorType[] characterArmor)
         {
-            character.EquipmentAttributes = Attributes;
-            character.Equipment[Slot] = this;
+            if (!characterArmor.Contains(Type))
+            {
+                throw new InvalidArmorException("Character cannot equip this armor type.");
+            }
+            if (characterLevel < RequiredLevel)
+            {
+                throw new InvalidArmorException("Character's level is not high enough.");
+            }
             return "New armor equipped!";
         }
 

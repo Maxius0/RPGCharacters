@@ -22,6 +22,7 @@
             TotalAttributes = new AttributeSet(BaseAttributes);
             LevelUpAttributes = new AttributeSet(lvlUpStr, lvlUpDex, lvlUpInt);
             EligibleWeaponTypes = new WeaponType[] { WeaponType.Axe, WeaponType.Hammer, WeaponType.Sword };
+            EligibleArmorTypes = new ArmorType[] { ArmorType.Mail, ArmorType.Plate};
         }
     }
 }
