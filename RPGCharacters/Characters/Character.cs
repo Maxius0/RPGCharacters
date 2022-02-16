@@ -72,7 +72,8 @@ namespace RPGCharacters
             }
             catch (Exception ex)
             {
-                result = ex.Message;
+                // Re-throw exceptions to satisfy tests.
+                throw ex;
             }
             return result;
         }
