@@ -1,7 +1,7 @@
 ﻿namespace RPGCharacters
 {
     /// <summary>
-    /// The mage character class. See assignment text appendix 3.1 for specification.
+    /// The mage character class. See assignment text appendix A section 3.1 for specification.
     /// </summary>
     public class Mage : Character
     {

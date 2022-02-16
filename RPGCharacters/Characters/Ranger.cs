@@ -1,7 +1,7 @@
 ﻿namespace RPGCharacters
 {
     /// <summary>
-    /// The ranger character class. See assignment text appendix 3.2 for specification.
+    /// The ranger character class. See assignment text appendix A section 3.2 for specification.
     /// </summary>
     public class Ranger : Character
     {

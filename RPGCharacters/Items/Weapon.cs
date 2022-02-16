@@ -14,6 +14,9 @@ namespace RPGCharacters
         Sword,
         Wand
     }
+    /// <summary>
+    /// A weapon is an item with a weapon type, a damage value and an attack speed value. Weapons can only go into the weapon slot.
+    /// </summary>
     public class Weapon : Item
     {
         public WeaponType Type { get; private set; }
@@ -30,6 +33,10 @@ namespace RPGCharacters
             AttackSpeed = attackSpeed;
         }
 
+        /// <summary>
+        /// Calculates the DPS (Damage Per Second) of the weapon. Formula from assignment appendix B section 2.
+        /// </summary>
+        /// <returns>The DPS of the weapon.</returns>
         public double DPS()
         {
             return Damage * AttackSpeed;

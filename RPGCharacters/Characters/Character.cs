@@ -5,7 +5,7 @@ using System.Text;
 namespace RPGCharacters
 {
     /// <summary>
-    /// The character super class, containing methods shared by all character classes.
+    /// The character super class, containing properties and methods shared by all character classes.
     /// </summary>
     public abstract class Character
     {
@@ -48,7 +48,7 @@ namespace RPGCharacters
         }
 
         /// <summary>
-        /// Calculates the character's damage based on their weapon DPS and primary attribute (see assignment text section 4.1).
+        /// Calculates the character's damage based on their weapon DPS and primary attribute. Formula from assignment text appendix B section 4.1.
         /// </summary>
         /// <returns>The damage of the character represented as a double value.</returns>
         public double Damage()
@@ -61,6 +61,14 @@ namespace RPGCharacters
             return weaponDPS * (1 + ((double)TotalAttributes.GetAttributeValue(PrimaryAttribute)) / 100.0);
         }
 
+        /// <summary>
+        /// Attempts to equip given item. If the item is equipable, it is stored in Equipment and a success message is returned.
+        /// Otherwise, an appropriate exception is thrown.
+        /// </summary>
+        /// <param name="item">The item to equip.</param>
+        /// <returns>A success message.</returns>
+        /// <exception cref="InvalidWeaponException">If item is an invalid weapon.</exception>
+        /// <exception cref="InvalidArmorException">If item is an invalid armor piece.</exception>
         public string EquipItem(Item item)
         {
             string result;

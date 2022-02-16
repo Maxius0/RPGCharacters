@@ -1,7 +1,7 @@
 ﻿namespace RPGCharacters
 {
     /// <summary>
-    /// The rogue character class. See assignment text appendix 3.3 for specification.
+    /// The rogue character class. See assignment text appendix A section 3.3 for specification.
     /// </summary>
     public class Rogue : Character
     {

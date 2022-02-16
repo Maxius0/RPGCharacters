@@ -11,6 +11,9 @@ namespace RPGCharacters
         Mail,
         Plate
     }
+    /// <summary>
+    /// An armor piece is an item with an armor type and a set of attributes. Armor pieces can go into 3 different slots (head, body, legs).
+    /// </summary>
     public class Armor : Item
     {
         public ArmorType Type { get; private set; }
