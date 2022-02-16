@@ -44,5 +44,17 @@ namespace RPGCharacters
             return "New weapon equipped!";
         }
 
+        public override string ToString()
+        {
+            StringBuilder weaponStringBuilder = new StringBuilder(Name);
+            weaponStringBuilder.Append("\nDamage: ");
+            weaponStringBuilder.Append(Damage);
+            weaponStringBuilder.Append("\nAttack speed: ");
+            weaponStringBuilder.Append(AttackSpeed);
+            weaponStringBuilder.Append("\nDPS: ");
+            weaponStringBuilder.Append(DPS());
+
+            return weaponStringBuilder.ToString();
+        }
     }
 }

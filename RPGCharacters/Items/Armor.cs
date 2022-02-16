@@ -33,5 +33,18 @@ namespace RPGCharacters
             character.Equipment[Slot] = this;
             return "New armor equipped!";
         }
+
+        public override string ToString()
+        {
+            StringBuilder weaponStringBuilder = new StringBuilder(Name);
+            weaponStringBuilder.Append("\nStrength: ");
+            weaponStringBuilder.Append(Attributes.GetAttributeValue(AttributeType.Strength));
+            weaponStringBuilder.Append("\nDexterity: ");
+            weaponStringBuilder.Append(Attributes.GetAttributeValue(AttributeType.Dexterity));
+            weaponStringBuilder.Append("\nIntelligence: ");
+            weaponStringBuilder.Append(Attributes.GetAttributeValue(AttributeType.Intelligence));
+
+            return weaponStringBuilder.ToString();
+        }
     }
 }

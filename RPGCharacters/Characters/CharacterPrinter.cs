@@ -15,7 +15,6 @@ namespace RPGCharacters
         {
             Console.WriteLine("<<< Character Sheet >>>");
             Console.WriteLine(characterString);
-            Console.WriteLine();
         }
     }
 }

@@ -10,24 +10,30 @@ namespace RPGCharacters
         /// <summary>
         /// Program execution starts here.
         /// </summary>
-        /// <param name="args">Command line arguments.</param>
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Welcome to Generic RPG!\n");
-            Console.WriteLine("Creating character...\n");
+            Console.WriteLine("\nCreating character...\n");
             Warrior testWarrior = new Warrior("Warius");
             CharacterPrinter.DisplayStats(testWarrior.ToString());
-            Console.WriteLine("Levelling up character...\n");
+
+            Console.WriteLine("\nLevelling up character...\n");
             testWarrior.LevelUp();
             CharacterPrinter.DisplayStats(testWarrior.ToString());
-            Console.WriteLine("Creating weapon...\n");
+
+            Console.WriteLine("\nCreating weapon...\n");
             Weapon testAxe = new Weapon("Common axe", 1, WeaponType.Axe, 7.0, 1.1);
-            Console.WriteLine("Equipping weapon...\n");
+            Console.WriteLine(testAxe.ToString());
+
+            Console.WriteLine("\nEquipping weapon...\n");
             testWarrior.EquipItem(testAxe);
             CharacterPrinter.DisplayStats(testWarrior.ToString());
-            Console.WriteLine("Creating armor piece...\n");
+
+            Console.WriteLine("\nCreating armor piece...\n");
             Armor testPlateBody = new Armor("Common plate body armor", 1, Slot.Body, ArmorType.Plate, new AttributeSet(1, 0, 0));
-            Console.WriteLine("Equipping armor piece...\n");
+            Console.WriteLine(testPlateBody.ToString());
+
+            Console.WriteLine("\nEquipping armor piece...\n");
             testWarrior.EquipItem(testPlateBody);
             CharacterPrinter.DisplayStats(testWarrior.ToString());
         }
