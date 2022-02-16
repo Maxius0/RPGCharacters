@@ -8,10 +8,9 @@ Clone or download repository.
 
 ## Usage
 
-Open solution in Visual Studio and run all tests.
+Open solution in Visual Studio and run all tests. Alternatively, build & run solution to see example usage of various features, including the character sheet.
 
 ## Maintainers
 
 Marius Samson
-https://gitlab.com/Maxius0
-https://github.com/Maxius0
+https://github.com/Maxius0 / https://gitlab.com/Maxius0
