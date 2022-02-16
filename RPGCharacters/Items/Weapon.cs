@@ -22,8 +22,11 @@ namespace RPGCharacters
         private double Damage { get; set;}
         private double AttackSpeed { get; set;}
 
-        public Weapon(WeaponType type, double damage, double attackSpeed)
+        public Weapon(string name, int requiredLevel, WeaponType type, double damage, double attackSpeed)
         {
+            Name = name;
+            RequiredLevel = requiredLevel;
+            Slot = Slot.Weapon;
             Type = type;
             Damage = damage;
             AttackSpeed = attackSpeed;
