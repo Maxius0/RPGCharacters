@@ -1,5 +1,8 @@
 ﻿namespace RPGCharacters
 {
+    /// <summary>
+    /// The rogue character class. See assignment text appendix 3.3 for specification.
+    /// </summary>
     public class Rogue : Character
     {
         private const int baseStr = 2;

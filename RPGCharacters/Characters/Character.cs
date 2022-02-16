@@ -3,6 +3,9 @@ using System.Text;
 
 namespace RPGCharacters
 {
+    /// <summary>
+    /// The character super class, containing methods shared by all character classes.
+    /// </summary>
     public abstract class Character
     {
         public int Level { get; private set; } = 1;
@@ -14,6 +17,9 @@ namespace RPGCharacters
         protected string CharacterClass { get; set; }
         protected double WeaponDPS { get; set; } = 1.0;
 
+        /// <summary>
+        /// Levels up the character, increasing their level and attributes accordingly.
+        /// </summary>
         public void LevelUp()
         {
             Level++;
@@ -21,11 +27,18 @@ namespace RPGCharacters
             UpdateTotalAttributes();
         }
 
+        /// <summary>
+        /// Updates the character's total attributes based on their base attributes and equipment bonuses.
+        /// </summary>
         private void UpdateTotalAttributes()
         {
             TotalAttributes = new AttributeSet(BaseAttributes);
         }
 
+        /// <summary>
+        /// Calculates the character's damage based on their weapon DPS and primary attribute (see assignment text section 4.1).
+        /// </summary>
+        /// <returns>The damage of the character represented as a double value.</returns>
         public double Damage()
         {
             return WeaponDPS * (1 + ((double) TotalAttributes.GetAttributeValue(PrimaryAttribute)) / 100.0);

@@ -1,5 +1,8 @@
 ﻿namespace RPGCharacters
 {
+    /// <summary>
+    /// The mage character class. See assignment text appendix 3.1 for specification.
+    /// </summary>
     public class Mage : Character
     {
         private const int baseStr = 1;

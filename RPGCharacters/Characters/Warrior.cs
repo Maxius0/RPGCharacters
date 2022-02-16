@@ -1,5 +1,8 @@
 ﻿namespace RPGCharacters
 {
+    /// <summary>
+    /// The warrior character class. See assignment text appendix 3.4 for specification.
+    /// </summary>
     public class Warrior : Character
     {
         private const int baseStr = 5;
